@@ -1,11 +1,12 @@
-
 import { NavLink } from "react-router-dom";
 import { Github, BookText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const navLinkClasses = ({ isActive }: { isActive: boolean }) =>
-    `transition-colors hover:text-foreground/80 ${isActive ? "text-foreground" : "text-foreground/60"}`;
+    `transition-colors hover:text-foreground/80 ${
+      isActive ? "text-foreground" : "text-foreground/60"
+    }`;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -23,7 +24,11 @@ const Header = () => {
           </NavLink>
         </nav>
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/wnsgho"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button variant="ghost" size="icon">
               <Github className="h-4 w-4" />
             </Button>
