@@ -38,8 +38,8 @@ export const projects: Project[] = [
       "자연어 처리 모델을 fine-tuning하여 Github 커밋 메시지와 README 파일로부터 프로젝트의 목표, 사용 기술, 개발 과정을 요약하는 기능을 구현했습니다. 'AI로 이런 부분을 자동화했다'는 구체적인 사례로, 텍스트 생성 AI를 통해 프로젝트 개요 초안을 자동으로 작성해주어 사용자가 글쓰기 부담을 덜 수 있도록 했습니다.",
     results: [
       {
-        image: "",
-        caption: "",
+        image: "/ai-dev/152514.png",
+        caption: "프로젝트 스크린샷",
       },
       {
         image: "",
