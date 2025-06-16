@@ -119,13 +119,25 @@ const ProjectDetailPage = () => {
                   allowFullScreen
                   className="rounded-lg border w-full aspect-video"
                 ></iframe>
-              ) : (
+              ) : result.image ? (
                 <img
                   src={result.image}
                   alt={result.caption}
                   className="rounded-lg border"
                 />
-              )}
+              ) : result.caption.includes("https://") ? (
+                <a
+                  href={result.caption.split("https://")[1].split("<br />")[0]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block p-4 rounded-lg border hover:bg-accent transition-colors"
+                >
+                  <div className="flex items-center gap-2">
+                    <LinkIcon className="w-4 h-4" />
+                    <span>{result.caption.split("<br />")[0]}</span>
+                  </div>
+                </a>
+              ) : null}
               <figcaption className="text-center text-sm text-muted-foreground mt-2">
                 {result.caption}
               </figcaption>

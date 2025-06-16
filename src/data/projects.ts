@@ -12,8 +12,9 @@ export interface Project {
   techStack: string[];
   aiFeatures?: string;
   results: {
-    image: string;
+    image?: string;
     video?: string; // Optional, in case the result is a video
+    link?: string; // Optional, in case the result is a link
     caption: string;
   }[];
   issuesAndSolutions: string;
@@ -90,6 +91,11 @@ export const projects: Project[] = [
         image: "",
         video: "https://youtu.be/B_PSvEQ0ryU",
         caption: "프로젝트 소개 영상",
+      },
+      {
+        image: "",
+        caption:
+          "발표 PDF<br />https://drive.google.com/file/d/1a4bOY_HYjeVMXZ5_0dqrHsR2WPJpjFr7/view?usp=drive_link",
       },
     ],
     issuesAndSolutions:
