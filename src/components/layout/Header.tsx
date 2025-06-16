@@ -22,7 +22,11 @@ const Header = () => {
           <NavLink to="/projects" className={navLinkClasses}>
             Projects
           </NavLink>
+          <NavLink to="/ai-usage" className={navLinkClasses}>
+            AI 활용 경험
+          </NavLink>
         </nav>
+
         <div className="flex flex-1 items-center justify-end space-x-2">
           <a
             href="https://github.com/wnsgho"

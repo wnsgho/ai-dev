@@ -124,7 +124,8 @@ export const projects: Project[] = [
       "OAuth2",
       "Tomcat",
     ],
-    aiFeatures: "",
+    aiFeatures:
+      "ChatGPT를 활용하여 반려동물 매칭 기능을 구현하였습니다. 사용자가 입력한 선호 정보를 바탕으로 AI가 등록된 동물 데이터에서 최적의 반려동물을 추천해주고 인삿말을 더하는 기능을 개발하였습니다.",
     results: [
       {
         image: "",
@@ -136,7 +137,46 @@ export const projects: Project[] = [
       "진행 기간 내 주요 이슈: 처음 PM을 맡게 되면서 FE팀과의 협업에 집중하려 노력했지만, BE 업무에 몰두해버리며 PM으로서의 협업 중재 업무에 집중하지 못하였습니다.<br /> FE팀과 협업하며 FE 기술적 지식을 어느 정도 알아야 한다는 어려움이 있었습니다.<br /> 장기 프로젝트를 진행하며 기능 구현 중 라이브러리 사용에 애를 먹기도 했습니다.<br />해결 방안: 매일 프로젝트 진행 전 짧은 회의를 통해 업무를 공유하여 진행 정도를 파악했습니다.<br /> 깃허브 관리, 영상 제작 등 비개발 작업을 전담하여 프로젝트 완수를 목표로 진행하였습니다.<br /> FE와 BE의 기능 연동이 잘 되지 않을 때는 FE팀원과의 개인 회의를 통해 서로의 어려운 점을 해결하였습니다.<br /> 기술적 어려움은 팀원과의 트러블슈팅 기록을 남기며 해결하였습니다.",
     whatIHaveLearned:
       "- 프로젝트 매니저로서 팀원들과의 소통과 협업의 중요성을 깨달았습니다. <br />- 백엔드 개발자로서 Spring Boot와 JPA를 활용한 RESTful API 개발 경험을 쌓았습니다. <br />- AI를 활용하여 반려동물 매칭 기능을 구현하며, AI 기술의 가능성을 체험했습니다.<br />- Github를 사용하며 체계적으로 커밋을 관리하고, 컨벤션을 정하고 프로젝트를 진행하여 코드 리뷰 및 파악에 시간을 줄일 수 있었습니다.<br />- FE 기술적 지식을 상당 부분 흡수하였고, 수정할 수 있게 되었습니다.<br />- ChatGPT, Deepseek 등 AI 툴을 활용하여 오류를 빠르게 잡아내고, 정해진 기간 내에 프로젝트를 완수 할 수 있었습니다.<br />- PM으로서의 업무 조절 능력과 협업하는 능력을 키울 수 있었습니다.",
-    liveUrl: "https://youtu.be/U2zvPHvb1CQ",
+    liveUrl: "",
     githubUrl: "https://github.com/TenPaws/Team_TenPaws",
+  },
+  {
+    id: "project-4th",
+    title: "검색어 트렌드 탐색기",
+    period: "2025.06.15", // 여기에 작업 기간을 입력하세요
+    teamComposition: "1명", // 여기에 인력 구성을 입력하세요`
+    description:
+      "네이버에 검색되는 키워드의 검색량을 확인할 수 있는 서비스입니다. <br /> 네이버 검색광고 API를 활용하여, 키워드의 검색지수를 확인할 수 있습니다. <br /> 검색, 문서량은 1년 단위로 제공되며, 월별로 검색량을 확인할 수 있습니다.",
+    longDescription:
+      "Lovable에서 진행한 AI Showdown 이벤트를 맞이하여 무료로 체험해 볼 수 있어 빠르게 MVP를 개발하기 위해 개인 프로젝트로 진행하였습니다.",
+    role: "1인 개발",
+    problem:
+      "블로그, 유튜브 등을 운영하며 트렌드를 파악하고, 키워드의 검색량을 확인할 수 있는 서비스가 필요했습니다. <br /> 네이버 검색광고 API를 활용하여, 키워드의 검색지수를 확인할 수 있는 서비스를 개발하고자 하였습니다.",
+    goal: "바이브 코딩만으로 네이버 검색광고 API를 활용하여, 키워드의 검색지수를 확인하고 분석할 수 있는 서비스를 개발하는 것.",
+    process:
+      "1. 기획: 핵심 기능(키워드 검색지수 확인, 월별 검색 기능) 정의 → 2. 개발: 네이버 검색광고 API를 활용한 키워드 검색지수 확인 및 월별 검색 기능 구현 테스크 명령 → 3. 배포: lovable 사이트 기능으로 배포",
+    techStack: [
+      "Google labs Jules",
+      "Lovable dev",
+      "Naver Search Ad API",
+      "Supabase",
+      "TypeScript",
+      "Gemini",
+    ],
+    aiFeatures:
+      "Lovable dev를 활용하여, 네이버 검색광고 API를 활용한 키워드 검색지수 확인, 월별 검색 기능을 구현하였습니다.",
+    results: [
+      {
+        image: "/ai-dev/144349.png",
+        video: "",
+        caption: "스크린샷",
+      },
+    ],
+    issuesAndSolutions:
+      "진행 기간 내 주요 이슈: lovable 페이지 내에서는 세부적인 수정을 하기엔 명령에 시간이 걸리기 때문에 효율적이지 않았습니다. <br />해결 방안: VSCode에서 세부적인 개발과 디버깅을 진행하고, lovable dev를 통해 배포하였습니다. <br /> 또한, Supabase를 활용하여 데이터베이스를 구축하고, Tailwind CSS를 활용하여 UI를 구성하였습니다.",
+    whatIHaveLearned:
+      "- Lovable dev를 활용하여, 네이버 검색광고 API를 활용한 키워드 검색지수 확인, 월별 검색 기능 구현을 빠르게 MVP로 개발할 수 있었습니다. <br />- Supabase를 활용하여 데이터베이스를 구축하고, Tailwind CSS를 활용하여 UI를 구성하며 새로운 기술을 배울 수 있었습니다.",
+    liveUrl: "https://search-trend-explorer.lovable.app",
+    githubUrl: "https://github.com/wnsgho/search-trend-explorer",
   },
 ];
