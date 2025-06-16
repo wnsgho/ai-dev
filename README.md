@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/2f8595d7-4c43-47f7-b9de-47a30fdcddc8
+**URL**:
 
 ## What technologies are used for this project?
 
