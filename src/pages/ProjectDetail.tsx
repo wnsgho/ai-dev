@@ -35,6 +35,20 @@ const ProjectDetailPage = () => {
         <p className="text-xl text-muted-foreground">
           {project.longDescription}
         </p>
+        <div className="mt-4 space-y-1 text-sm text-slate-400">
+          {project.period && (
+            <p className="flex items-center gap-2">
+              <span className="text-base">📅</span> 작업 기간: {project.period}
+            </p>
+          )}
+          {project.teamComposition && (
+            <p className="flex items-center gap-2">
+              <span className="text-base">👥</span> 인력 구성:{" "}
+              {project.teamComposition}
+            </p>
+          )}
+        </div>
+        <div className="flex gap-2 mt-6"></div>
         <div className="flex gap-2 mt-6">
           {project.githubUrl && (
             <a
@@ -69,7 +83,7 @@ const ProjectDetailPage = () => {
         <SectionTitle>설계 및 개발 과정</SectionTitle>
         <Paragraph>{project.process}</Paragraph>
 
-        <SectionTitle>사용 기술 / 라이브러리 / AI 모델</SectionTitle>
+        <SectionTitle>사용된 기술/라이브러리</SectionTitle>
         <div className="flex flex-wrap gap-2">
           {project.techStack.map((tech) => (
             <Badge key={tech} variant="default">
@@ -78,10 +92,14 @@ const ProjectDetailPage = () => {
           ))}
         </div>
 
-        <SectionTitle>AI 활용 사례</SectionTitle>
-        <blockquote className="mt-6 border-l-2 pl-6 italic">
-          "{project.aiFeatures}"
-        </blockquote>
+        {project.aiFeatures && (
+          <>
+            <SectionTitle>AI 활용 사례</SectionTitle>
+            <blockquote className="mt-6 border-l-2 pl-6 italic">
+              "{project.aiFeatures}"
+            </blockquote>
+          </>
+        )}
 
         <SectionTitle>결과물</SectionTitle>
         <div className="grid grid-cols-1 gap-6 mt-6">

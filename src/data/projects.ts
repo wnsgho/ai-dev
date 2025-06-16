@@ -3,12 +3,14 @@ export interface Project {
   title: string;
   description: string;
   longDescription: string;
+  period: string; // 작업 기간 (예: "2023.03 - 2023.04")
+  teamComposition: string; // 인력 구성 (예: "프론트엔드 2명, 백엔드 3명")
   role: string;
   problem: string;
   goal: string;
   process: string;
   techStack: string[];
-  aiFeatures: string;
+  aiFeatures?: string;
   results: {
     image: string;
     video?: string; // Optional, in case the result is a video
@@ -24,6 +26,8 @@ export const projects: Project[] = [
   {
     id: "project-1st",
     title: "원두 쇼핑몰 클론코딩 프로젝트",
+    period: "2024.09.06~2024.09.12", // 여기에 작업 기간을 입력하세요
+    teamComposition: "6명", // 여기에 인력 구성을 입력하세요`
     description:
       "원두 쇼핑몰 클론코딩 프로젝트로, 실제 쇼핑몰의 기능을 구현하여 백엔드 기술을 익히는 데 중점을 둔 프로젝트입니다.",
     longDescription: "",
@@ -34,8 +38,6 @@ export const projects: Project[] = [
     process:
       "1. 기획: 핵심 기능(주문, 장바구니) 정의 → 2.개발:  → 3. **배포**: Vercel과 AWS를 이용한 배포. 혼자 진행하며 빠른 프로토타이핑과 개선에 집중했습니다.",
     techStack: ["Java", "CSS", "HTML", "JavaScript", "MySQL"],
-    aiFeatures:
-      "자연어 처리 모델을 fine-tuning하여 Github 커밋 메시지와 README 파일로부터 프로젝트의 목표, 사용 기술, 개발 과정을 요약하는 기능을 구현했습니다. 'AI로 이런 부분을 자동화했다'는 구체적인 사례로, 텍스트 생성 AI를 통해 프로젝트 개요 초안을 자동으로 작성해주어 사용자가 글쓰기 부담을 덜 수 있도록 했습니다.",
     results: [
       {
         image: "/ai-dev/152514.png",
@@ -48,11 +50,15 @@ export const projects: Project[] = [
     ],
     issuesAndSolutions:
       "진행 기간 내 주요 이슈: 처음 배운 내용을 토대로 코드를 작성하였으나, 팀원 모두 프론트 작업을 할 수 없었기에 직접 시각적으로 볼 수 없어 교육 초반의 지식으론 오류사항을 파악하기 어려웠습니다. 해결 방안: 제가 직접 프론트엔드도 클론 코딩으로 작업을 진행하여, 전체적인 흐름을 이해하고 문제를 해결했습니다. 또한, 코드 리뷰를 통해 팀원들과 지식을 공유하며 개선했습니다.",
+    whatIHaveLearned:
+      "- 백엔드 기술 스택을 익히고, 실제 서비스 운영에 필요한 기술 스택을 경험했습니다. <br />- 프론트엔드와 백엔드의 연동을 이해하고, 클론코딩을 통해 실무에서의 개발 과정을 경험했습니다. <br />- GitHub를 통한 협업과 코드 리뷰의 중요성을 깨달았습니다.",
     githubUrl: "https://github.com/backendDev7/NBE2_1_Se7enStarZ",
   },
   {
     id: "project-2nd",
     title: "발주 관리 통합 솔루션",
+    period: "2024.09.23~2024.10.10", // 여기에 작업 기간을 입력하세요
+    teamComposition: "6명", // 여기에 인력 구성을 입력하세요`
     description:
       "요식업에 진입하는 자영업자를 타겟팅하는 발주 관리 시스템. 요식업 초기 불필요한 지출 제거, 식재료 손실 최소화를 통한 안정적인 사업 운영을 이룰 수 있도록 발주 재료의 시기별 증감률, 로스율 비교, 평균 단가 조회를 제공하는 통합 솔루션.",
     longDescription: "",
@@ -77,7 +83,8 @@ export const projects: Project[] = [
       "Slack",
       "Canva",
     ],
-    aiFeatures: "",
+    aiFeatures:
+      "구현 과정에서 ChatGPT를 사용하며 테스트 코드를 작성하여 40% 이상 시간을 절약, 잘 모르는 분야인 프론트 오류 해결에도 적극적으로 사용하며 완성.",
     results: [
       {
         image: "",
@@ -94,15 +101,29 @@ export const projects: Project[] = [
   },
   {
     id: "project-3rd",
-    title: "",
-    description: "",
+    title: "독거노인 - 반려동물 매칭 서비스 TENPAWS",
+    period: "2024.11.15~2024.12.11", // 여기에 작업 기간을 입력하세요
+    teamComposition: "7명(FE 3명, BE 4명)", // 여기에 인력 구성을 입력하세요`
+    description:
+      "초고령화 사회로 진입한 대한민국의 심각한 사회적 문제를 해결하고, 매년 10만 마리 이상 유기되는 동물들의 생명을 구하기 위해 독거노인 - 반려동물 매칭 서비스를 기획하였습니다.",
     longDescription: "",
-    role: "",
-    problem: "",
-    goal: "",
+    role: "PM, BE <br /> 프로젝트 매니저 및 깃허브 레포지토리 관리자, Chat GPT를 통한 반려동물 매칭 기능 담당",
+    problem:
+      "(부트캠프 최종 프로젝트) <br />2024년 7월을 기점으로 대한민국은 초고령화 사회로 진입하여 사회적 문제로 부상하였습니다. 그리고, 유기동물은 매년 10만 마리 이상이라는 사회적 문제가 있습니다. 이 두 가지 사회적 문제를 해결할 방법을 고민하였습니다.",
+    goal: "(REST API 구현)<br />이 두 가지를 해결하기 위해 독거 어르신과 보호소의 유기 동물을 매칭함으로써, 서로에게 새로운 가족이 되어주는 따뜻한 연결의 가치를 실현합니다. TENPAWS는 단순한 서비스가 아닌, 사람과 동물 모두의 삶에 긍정적인 변화를 가져오는 사회적 동반자가 되고자 합니다.",
     process:
-      "1. 기획: 팀 프로젝트로 진행, 역할 분담(백엔드, 프론트엔드). → 2. 개발: Scrum 방식으로 2주 스프린트 진행. → 3. 배포: Netlify를 통해 프로토타입 배포.",
-    techStack: ["React", "TypeScript", "TensorFlow.js", "Chart.js", "WebRTC"],
+      "1. 기획: 주제 기획서 작성, 요구사항 명세서, 핵심 기능 정의, 일정 관리를 위한 Jira 학습/적용, ERD 정의 →<br />2.개발: 기술 스택 선정, DB 및 협업을 위한 API 설계/구현, 주요 기능 개발, 팀 내 코드 리뷰 및 통합 테스트  →<br /> 3. 배포: Docker Compose로 프론트와 백엔드를 병합, AWS(S3, EC2, ECR, CodeDeploy)를 사용하여 서비스 배포",
+    techStack: [
+      "Java",
+      "Gradle",
+      "Spring Boot",
+      "Spring Security",
+      "Spring Data JPA",
+      "Swagger",
+      "JWT",
+      "OAuth2",
+      "Tomcat",
+    ],
     aiFeatures: "",
     results: [
       {
@@ -111,7 +132,10 @@ export const projects: Project[] = [
         caption: "프로젝트 소개 영상",
       },
     ],
-    issuesAndSolutions: "주요 이슈: 해결 방안: ",
+    issuesAndSolutions:
+      "진행 기간 내 주요 이슈: 처음 PM을 맡게 되면서 FE팀과의 협업에 집중하려 노력했지만, BE 업무에 몰두해버리며 PM으로서의 협업 중재 업무에 집중하지 못하였습니다.<br /> FE팀과 협업하며 FE 기술적 지식을 어느 정도 알아야 한다는 어려움이 있었습니다.<br /> 장기 프로젝트를 진행하며 기능 구현 중 라이브러리 사용에 애를 먹기도 했습니다.<br />해결 방안: 매일 프로젝트 진행 전 짧은 회의를 통해 업무를 공유하여 진행 정도를 파악했습니다.<br /> 깃허브 관리, 영상 제작 등 비개발 작업을 전담하여 프로젝트 완수를 목표로 진행하였습니다.<br /> FE와 BE의 기능 연동이 잘 되지 않을 때는 FE팀원과의 개인 회의를 통해 서로의 어려운 점을 해결하였습니다.<br /> 기술적 어려움은 팀원과의 트러블슈팅 기록을 남기며 해결하였습니다.",
+    whatIHaveLearned:
+      "- 프로젝트 매니저로서 팀원들과의 소통과 협업의 중요성을 깨달았습니다. <br />- 백엔드 개발자로서 Spring Boot와 JPA를 활용한 RESTful API 개발 경험을 쌓았습니다. <br />- AI를 활용하여 반려동물 매칭 기능을 구현하며, AI 기술의 가능성을 체험했습니다.<br />- Github를 사용하며 체계적으로 커밋을 관리하고, 컨벤션을 정하고 프로젝트를 진행하여 코드 리뷰 및 파악에 시간을 줄일 수 있었습니다.<br />- FE 기술적 지식을 상당 부분 흡수하였고, 수정할 수 있게 되었습니다.<br />- ChatGPT, Deepseek 등 AI 툴을 활용하여 오류를 빠르게 잡아내고, 정해진 기간 내에 프로젝트를 완수 할 수 있었습니다.<br />- PM으로서의 업무 조절 능력과 협업하는 능력을 키울 수 있었습니다.",
     liveUrl: "https://youtu.be/U2zvPHvb1CQ",
     githubUrl: "https://github.com/TenPaws/Team_TenPaws",
   },
