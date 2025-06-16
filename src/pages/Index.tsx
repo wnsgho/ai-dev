@@ -103,7 +103,7 @@ const Index = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">Featured Projects</h2>
           <p className="text-lg text-muted-foreground mt-3">
-            저의 고민과 해결 과정을 담은 대표 프로젝트입니다.
+            저의 고민과 해결 과정을 담은 프로젝트들입니다.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
