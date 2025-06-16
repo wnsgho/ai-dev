@@ -18,7 +18,12 @@ const Index = () => {
             </h1>{" "}
             <h2 className="inline">
               <span className="inline bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
-                개발자, [최준호]
+                <br />
+                예비개발자,
+                <br />
+                <span className="text-[#F596D3]">[</span>
+                <span className="font-bold">최준호</span>
+                <span className="text-[#F596D3]">]</span>
               </span>{" "}
               입니다.
             </h2>

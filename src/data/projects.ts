@@ -11,9 +11,11 @@ export interface Project {
   aiFeatures: string;
   results: {
     image: string;
+    video?: string; // Optional, in case the result is a video
     caption: string;
   }[];
   issuesAndSolutions: string;
+  whatIHaveLearned?: string;
   githubUrl?: string;
   liveUrl?: string;
 }
@@ -45,34 +47,72 @@ export const projects: Project[] = [
       },
     ],
     issuesAndSolutions:
-      "**주요 이슈**: AI가 부정확한 기술 스택을 추출하는 문제. **해결 방안**: 정규표현식과 키워드 기반 필터링을 추가하고, 사용자 피드백을 통해 모델을 지속적으로 개선하는 파이프라인을 구축하여 정확도를 85%까지 향상시켰습니다.",
-    githubUrl: "https://github.com",
+      "진행 기간 내 주요 이슈: 처음 배운 내용을 토대로 코드를 작성하였으나, 팀원 모두 프론트 작업을 할 수 없었기에 직접 시각적으로 볼 수 없어 교육 초반의 지식으론 오류사항을 파악하기 어려웠습니다. 해결 방안: 제가 직접 프론트엔드도 클론 코딩으로 작업을 진행하여, 전체적인 흐름을 이해하고 문제를 해결했습니다. 또한, 코드 리뷰를 통해 팀원들과 지식을 공유하며 개선했습니다.",
+    githubUrl: "https://github.com/backendDev7/NBE2_1_Se7enStarZ",
   },
   {
-    id: "emotion-recognition",
-    title: "실시간 감정 인식 시스템",
+    id: "project-2nd",
+    title: "발주 관리 통합 솔루션",
     description:
-      "웹캠을 통해 실시간으로 사용자의 표정을 분석하고 7가지 주요 감정을 인식하여 시각화하는 AI 애플리케이션입니다.",
-    longDescription:
-      "온라인 교육, 고객 서비스 등 다양한 분야에서 사용자의 감정 상태를 파악하여 상호작용의 질을 높이는 데 활용될 수 있습니다. TensorFlow.js를 사용하여 브라우저에서 직접 모델을 실행함으로써 개인정보를 보호하고 빠른 응답 속도를 구현했습니다.",
-    role: "프론트엔드 및 AI 모델 통합",
+      "요식업에 진입하는 자영업자를 타겟팅하는 발주 관리 시스템. 요식업 초기 불필요한 지출 제거, 식재료 손실 최소화를 통한 안정적인 사업 운영을 이룰 수 있도록 발주 재료의 시기별 증감률, 로스율 비교, 평균 단가 조회를 제공하는 통합 솔루션.",
+    longDescription: "",
+    role: "FE, BE \n \n 핵심 기능 중 하나인 주문 관리를 팀원 1명과 함께 구현하였습니다. GET을 통해 사용자, 상품의 DB를 가져와 각 상품id에 맞는 상품을 POST를 통해 주문 목록을 생성, 삭제할 수 있게 구현하고, React 라이브러리의 차트를 활용하여 주문 요약 차트를 구현하였습니다.",
+
     problem:
-      "비대면 상호작용이 늘어나면서 상대방의 감정을 파악하기 어려워 소통의 오해가 생기는 경우가 많습니다.",
-    goal: "실시간 영상 분석을 통해 비언어적 소통의 한계를 극복하고, 더 깊이 있는 상호작용을 가능하게 하는 기술적 기반을 마련하는 것.",
+      "(REST API 구현을 위한 두번째 프로젝트)<br /> 한국의 자영업 중 요식업이 80% 차지하는데, 초기 대응 미흡으로 인해 손해를 보는 경우가 대다수입니다. 그 중 매출에 큰 영향을 끼치는 재료 발주는 개인 역량, 또는 오랜 기간 영업경험을 통한 감각에 의존하는 실정이라고 합니다. 재료 발주 관리를 통해 이 격차를 해소하려고자 하였습니다.",
+    goal: "(REST API 구현)<br /> 사용자, 관리자, 상품, 그리고 주문 CRUD를 구현하고, 각 api를 구현하여 실제 동작을 완성하는 것을 목표로 진행했습니다. 요식업에 진입하는 자영업자가 발주할 재료의 시기별 증감률과 평균 단가를 확인하고, 타 사용자의 재료 로스율과 본인의 로스율을 비교하여 초기 세팅에 불필요한 비용을 제거하고, 식재료의 손실을 최소화하여 안정적인 사업을 운영할 수 있도록 솔루션을 제공하는 것이 프로젝트의 목표입니다.",
     process:
-      "1. **기획**: 팀 프로젝트로 진행, 역할 분담(백엔드, 프론트엔드). → 2. **개발**: Scrum 방식으로 2주 스프린트 진행. 저는 TensorFlow.js를 이용한 모델 통합 및 UI 개발 담당. → 3. **배포**: Netlify를 통해 프로토타입 배포.",
-    techStack: ["React", "TypeScript", "TensorFlow.js", "Chart.js", "WebRTC"],
-    aiFeatures:
-      "사전 훈련된 CNN(Convolutional Neural Network) 이미지 분류 모델을 브라우저 환경에 맞게 최적화했습니다. AI를 통해 실시간으로 비디오 스트림의 각 프레임을 분석하고 감정 확률을 계산하는 부분을 혁신적으로 구현하여, 서버 없이 클라이언트 단에서 모든 연산이 이루어지도록 했습니다.",
+      "1. 기획: 요구사항 명세서, 핵심 기능(사용자, 관리자, 주문, 상품) 정의, 일정 관리를 위한 Jira 학습/적용 →<br /> 2.개발: 기술 스택 선정, DB 및 API 설계/구현, 프론트엔드와 백엔드의 주요 기능 개발, 코드 리뷰 및 테스트 →<br /> 3. 배포: 로컬에서 테스트 하였습니다.",
+    techStack: [
+      "React",
+      "Java",
+      "Spring Boot",
+      "JPA",
+      "QueryDSL",
+      "H2",
+      "Gradle",
+      "GitHub",
+      "Jira",
+      "Notion",
+      "Slack",
+      "Canva",
+    ],
+    aiFeatures: "",
     results: [
       {
-        image:
-          "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2070&auto=format&fit=crop",
-        caption: "감정 인식 결과가 차트로 시각화된 화면",
+        image: "",
+        video: "https://youtu.be/B_PSvEQ0ryU",
+        caption: "프로젝트 소개 영상",
       },
     ],
     issuesAndSolutions:
-      "**주요 이슈**: 다양한 조명 환경과 얼굴 각도에 따른 인식률 저하. **해결 방안**: 데이터 증강(Data Augmentation) 기법을 사용하여 학습 데이터셋을 확장하고, 모델의 일반화 성능을 높였습니다. 또한, 인식률이 낮을 경우 '판단 불가' 상태를 추가하여 시스템의 신뢰도를 높였습니다.",
-    liveUrl: "#",
+      "진행 기간 내 주요 이슈: 주문 관리 부분은 CRUD 자체는 완성했음에도 불구하고, 모든 데이터에서 연계되어야 하는 점 때문에 개발 당시 시간이 지체되었습니다. 또한, 프론트로 구현하기 어려움을 겪었습니다.<br /><br />해결 방안: 깃허브에 브랜치를 새로 만들어, 테스트용 더미 데이터를 만들고 주문관리 기능을 테스트 하였습니다. 구현 과정에서 ChatGPT를 사용하며 테스트 코드를 작성하여 40% 이상 시간을 절약할 수 있었고, 잘 모르는 분야인 프론트 오류 해결에도 적극적으로 사용하며 완성하였습니다. 이후 팀의 코드가 모두 완성되었을때, 필요한 부분만 수정하여 프로젝트를 완성할 수 있었습니다.",
+    whatIHaveLearned:
+      "- 협업 툴 Jira, Canva, Github 등을 사용하며 체계적으로 커밋을 관리할 수 있었습니다. 커밋 작성시 기준을 정하여 효율적인 Pull Request를 진행할 수 있었습니다.<br />- Rest API를 활용하여 실시간 데이터를 반영할 수 있다는 것을 확인하고 경험하였습니다.<br />- ChatGPT를 적극적으로 사용해가며 모르는 분야도 지식을 순식간에 습득하고 활용할 수 있다는 것을 깨닫고, 뤼튼과 다른 AI 챗봇 서비스를 사용하기 시작했습니다.",
+    liveUrl: "",
+    githubUrl: "https://github.com/wnsgho/Devcourse-Team2",
+  },
+  {
+    id: "project-3rd",
+    title: "",
+    description: "",
+    longDescription: "",
+    role: "",
+    problem: "",
+    goal: "",
+    process:
+      "1. 기획: 팀 프로젝트로 진행, 역할 분담(백엔드, 프론트엔드). → 2. 개발: Scrum 방식으로 2주 스프린트 진행. → 3. 배포: Netlify를 통해 프로토타입 배포.",
+    techStack: ["React", "TypeScript", "TensorFlow.js", "Chart.js", "WebRTC"],
+    aiFeatures: "",
+    results: [
+      {
+        image: "",
+        video: "https://youtu.be/U2zvPHvb1CQ",
+        caption: "프로젝트 소개 영상",
+      },
+    ],
+    issuesAndSolutions: "주요 이슈: 해결 방안: ",
+    liveUrl: "https://youtu.be/U2zvPHvb1CQ",
+    githubUrl: "https://github.com/TenPaws/Team_TenPaws",
   },
 ];

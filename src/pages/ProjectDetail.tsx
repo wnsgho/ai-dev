@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import { projects } from "@/data/projects";
 import { Badge } from "@/components/ui/badge";
@@ -15,27 +14,44 @@ const ProjectDetailPage = () => {
   }
 
   const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-    <h2 className="text-2xl font-bold tracking-tight mt-12 mb-4 border-b pb-2">{children}</h2>
+    <h2 className="text-2xl font-bold tracking-tight mt-12 mb-4 border-b pb-2">
+      {children}
+    </h2>
   );
 
   const Paragraph = ({ children }: { children: React.ReactNode }) => (
-    <p className="text-muted-foreground leading-relaxed">{children}</p>
+    <div
+      className="text-slate-300 leading-relaxed"
+      dangerouslySetInnerHTML={{ __html: children as string }}
+    />
   );
 
   return (
     <div className="container max-w-screen-md py-12 md:py-20">
       <header className="mb-12">
-        <h1 className="text-4xl font-bold tracking-tight lg:text-5xl mb-2">{project.title}</h1>
-        <p className="text-xl text-muted-foreground">{project.longDescription}</p>
+        <h1 className="text-4xl font-bold tracking-tight lg:text-5xl mb-2">
+          {project.title}
+        </h1>
+        <p className="text-xl text-muted-foreground">
+          {project.longDescription}
+        </p>
         <div className="flex gap-2 mt-6">
           {project.githubUrl && (
-            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-              <Button variant="outline"><Github className="w-4 h-4 mr-2" /> GitHub</Button>
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline">
+                <Github className="w-4 h-4 mr-2" /> GitHub
+              </Button>
             </a>
           )}
           {project.liveUrl && (
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-              <Button variant="outline"><LinkIcon className="w-4 h-4 mr-2" /> Live Demo</Button>
+              <Button variant="outline">
+                <LinkIcon className="w-4 h-4 mr-2" /> Live Demo
+              </Button>
             </a>
           )}
         </div>
@@ -56,7 +72,9 @@ const ProjectDetailPage = () => {
         <SectionTitle>사용 기술 / 라이브러리 / AI 모델</SectionTitle>
         <div className="flex flex-wrap gap-2">
           {project.techStack.map((tech) => (
-            <Badge key={tech} variant="default">{tech}</Badge>
+            <Badge key={tech} variant="default">
+              {tech}
+            </Badge>
           ))}
         </div>
 
@@ -69,8 +87,30 @@ const ProjectDetailPage = () => {
         <div className="grid grid-cols-1 gap-6 mt-6">
           {project.results.map((result, index) => (
             <figure key={index}>
-              <img src={result.image} alt={result.caption} className="rounded-lg border" />
-              <figcaption className="text-center text-sm text-muted-foreground mt-2">{result.caption}</figcaption>
+              {result.video ? (
+                <iframe
+                  width="560"
+                  height="315"
+                  src={result.video.replace(
+                    "youtu.be/",
+                    "www.youtube.com/embed/"
+                  )}
+                  title={result.caption}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="rounded-lg border w-full aspect-video"
+                ></iframe>
+              ) : (
+                <img
+                  src={result.image}
+                  alt={result.caption}
+                  className="rounded-lg border"
+                />
+              )}
+              <figcaption className="text-center text-sm text-muted-foreground mt-2">
+                {result.caption}
+              </figcaption>
             </figure>
           ))}
         </div>
@@ -78,6 +118,11 @@ const ProjectDetailPage = () => {
         <SectionTitle>주요 이슈와 해결 방안</SectionTitle>
         <Paragraph>{project.issuesAndSolutions}</Paragraph>
       </article>
+
+      <SectionTitle>배운점</SectionTitle>
+      <div className="flex flex-wrap gap-2">
+        <Paragraph>{project.whatIHaveLearned}</Paragraph>
+      </div>
 
       <div className="mt-20 text-center">
         <Link to="/projects">
