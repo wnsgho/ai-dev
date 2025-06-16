@@ -21,7 +21,7 @@ const ProjectDetailPage = () => {
 
   const Paragraph = ({ children }: { children: React.ReactNode }) => (
     <div
-      className="text-slate-300 leading-relaxed"
+      className="text-slate-300 dark:text-slate-200 text-slate-900 leading-relaxed"
       dangerouslySetInnerHTML={{ __html: children as string }}
     />
   );
@@ -35,7 +35,7 @@ const ProjectDetailPage = () => {
         <p className="text-xl text-muted-foreground">
           {project.longDescription}
         </p>
-        <div className="mt-4 space-y-1 text-sm text-slate-400">
+        <div className="mt-4 space-y-1 text-sm text-slate-900 dark:text-slate-400">
           {project.period && (
             <p className="flex items-center gap-2">
               <span className="text-base">📅</span> 작업 기간: {project.period}

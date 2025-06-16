@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { Github, BookText } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "../ui/ThemeToggle";
 
 const Header = () => {
   const navLinkClasses = ({ isActive }: { isActive: boolean }) =>
@@ -28,6 +29,7 @@ const Header = () => {
         </nav>
 
         <div className="flex flex-1 items-center justify-end space-x-2">
+          <ThemeToggle />
           <a
             href="https://github.com/wnsgho"
             target="_blank"

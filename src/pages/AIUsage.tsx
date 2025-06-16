@@ -76,7 +76,7 @@ const AIUsagePage = () => {
           사용중인 AI 활용 도구들
         </h1>
         <p className="text-xl text-muted-foreground">
-          개발 생산성을 높이기 위한 AI 도구 활용 방법을 소개합니다
+          개발 생산성을 높이기 위한 AI 도구 활용 방법
         </p>
       </header>
 
@@ -89,13 +89,13 @@ const AIUsagePage = () => {
             </CardHeader>
             <CardContent>
               <h3 className="font-semibold mb-2">주요 활용 사례</h3>
-              <ul className="list-disc pl-4 mb-4 space-y-1 text-muted-foreground">
+              <ul className="list-disc pl-4 mb-4 space-y-1 text-slate-600 dark:text-slate-200">
                 {tool.useCases.map((useCase, index) => (
                   <li key={index}>{useCase}</li>
                 ))}
               </ul>
               <div className="mt-4">
-                <Badge variant="secondary">💡 Tip</Badge>
+                <Badge variant="secondary">💡유용한 Tip</Badge>
                 <p className="mt-2 text-sm text-muted-foreground">
                   {tool.tips}
                 </p>
