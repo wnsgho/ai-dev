@@ -96,7 +96,7 @@ const ProjectDetailPage = () => {
           <>
             <SectionTitle>AI 활용 사례</SectionTitle>
             <blockquote className="mt-6 border-l-2 pl-6 italic">
-              "{project.aiFeatures}"
+              {project.aiFeatures}
             </blockquote>
           </>
         )}

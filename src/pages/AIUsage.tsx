@@ -10,9 +10,21 @@ import {
 const AIUsagePage = () => {
   const aiTools = [
     {
+      name: "이미지 생성 툴(ComfyUI, Stable Diffusion)",
+      description: "이미지 생성 툴을 활용하여 제품 디자인 및 영상 제작에 활용",
+      useCases: ["디자인 및 영상 제작", "컨텐츠 생성"],
+      tips: "다양한 이미지 생성 툴을 활용하여 제품 디자인 및 영상 제작에 활용할 수 있습니다. 예) 유튜브 컨텐츠, 소셜 미디어 컨텐츠 등",
+    },
+    {
+      name: "목소리 생성 툴(GPT-SoVIT)",
+      description: "목소리 생성 툴을 활용하여 유튜브 영상 제작에 활용",
+      useCases: ["유튜브 AI 영상 제작"],
+      tips: "GPT-SoVIT을 활용하여 유튜브 AI 영상 제작에 활용할 수 있습니다.",
+    },
+    {
       name: "OpenWebUI",
       description:
-        "프로그래밍 문제 해결, 문서화에 활용, RAG(정보 검색) 기능을 통한 지식 확장 및 습득",
+        "프로그래밍 문제 해결, 문서화에 활용, RAG(검색 증강 생성) 기능을 통한 지식 확장 및 습득",
       useCases: [
         "오류 메시지 분석 및 해결 방안 도출",
         "API키를 활용한 외부 AI 서비스(Openai 등) 연동",
@@ -40,7 +52,8 @@ const AIUsagePage = () => {
         "AI 기반 노트 작성 및 요약",
         "지식 그래프 생성 및 관리",
         "문서 간 연결 및 관계 분석",
-        "AI를 활용한 정보 검색 및 추천",
+        "AI를 활용한 정보 검색",
+        "앱 자체를 RAG 기능으로 활용",
       ],
       tips: "SmartComposer 플러그인을 통해 Obsidian에서 AI를 활용하여 노트를 작성하고, 지식을 체계적으로 관리할 수 있습니다. AI를 활용하여 새로운 지식을 지식기반으로 넣어두면 학습 시 굉장히 유용합니다.",
     },
@@ -76,7 +89,7 @@ const AIUsagePage = () => {
           사용중인 AI 활용 도구들
         </h1>
         <p className="text-xl text-muted-foreground">
-          개발 생산성을 높이기 위한 AI 도구 활용 방법
+          생산성을 높이기 위한 AI 도구 활용 방법
         </p>
       </header>
 
