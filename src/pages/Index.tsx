@@ -21,9 +21,7 @@ const Index = () => {
                 <br />
                 예비개발자,
                 <br />
-                <span className="text-[#F596D3]">[</span>
                 <span className="font-bold"> 최준호 </span>
-                <span className="text-[#F596D3]">]</span>
               </span>{" "}
               입니다.
             </h2>
