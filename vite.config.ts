@@ -7,7 +7,6 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   base: "/ai-dev/", // Add this line
   server: {
-    host: "::",
     port: 8080,
   },
   plugins: [

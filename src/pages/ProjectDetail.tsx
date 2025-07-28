@@ -4,14 +4,25 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, Link as LinkIcon } from "lucide-react";
 import NotFound from "./NotFound";
+import { useTranslation } from "react-i18next";
 
 const ProjectDetailPage = () => {
   const { projectId } = useParams<{ projectId: string }>();
+  const { t } = useTranslation();
   const project = projects.find((p) => p.id === projectId);
 
   if (!project) {
     return <NotFound />;
   }
+
+  const getTranslated = (key: string) => {
+    const fullKey = `projects.${projectId}.${key}`;
+    const translated = t(fullKey);
+    // If translation not found, return the original value from projects.ts
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    return translated === fullKey ? project[key] : translated;
+  };
 
   const SectionTitle = ({ children }: { children: React.ReactNode }) => (
     <h2 className="text-2xl font-bold tracking-tight mt-12 mb-4 border-b pb-2">
@@ -30,10 +41,10 @@ const ProjectDetailPage = () => {
     <div className="container max-w-screen-md py-12 md:py-20">
       <header className="mb-12">
         <h1 className="text-4xl font-bold tracking-tight lg:text-5xl mb-2">
-          {project.title}
+          {getTranslated("title")}
         </h1>
         <p className="text-xl text-muted-foreground">
-          {project.longDescription}
+          {getTranslated("longDescription")}
         </p>
         <div className="mt-4 space-y-1 text-sm text-slate-900 dark:text-slate-400">
           {project.period && (
@@ -74,14 +85,14 @@ const ProjectDetailPage = () => {
       <article>
         <SectionTitle>프로젝트 개요</SectionTitle>
         <h3 className="text-lg font-semibold mt-6 mb-2">문제 정의</h3>
-        <Paragraph>{project.problem}</Paragraph>
+        <Paragraph>{getTranslated("problem")}</Paragraph>
         <h3 className="text-lg font-semibold mt-6 mb-2">목표</h3>
-        <Paragraph>{project.goal}</Paragraph>
+        <Paragraph>{getTranslated("goal")}</Paragraph>
         <h3 className="text-lg font-semibold mt-6 mb-2">맡은 역할</h3>
-        <Paragraph>{project.role}</Paragraph>
+        <Paragraph>{getTranslated("role")}</Paragraph>
 
         <SectionTitle>설계 및 개발 과정</SectionTitle>
-        <Paragraph>{project.process}</Paragraph>
+        <Paragraph>{getTranslated("process")}</Paragraph>
 
         <SectionTitle>사용된 기술/라이브러리</SectionTitle>
         <div className="flex flex-wrap gap-2">
@@ -96,7 +107,7 @@ const ProjectDetailPage = () => {
           <>
             <SectionTitle>AI 활용 사례</SectionTitle>
             <blockquote className="mt-6 border-l-2 pl-6 italic">
-              {project.aiFeatures}
+              {getTranslated("aiFeatures")}
             </blockquote>
           </>
         )}
@@ -146,12 +157,12 @@ const ProjectDetailPage = () => {
         </div>
 
         <SectionTitle>주요 이슈와 해결 방안</SectionTitle>
-        <Paragraph>{project.issuesAndSolutions}</Paragraph>
+        <Paragraph>{getTranslated("issuesAndSolutions")}</Paragraph>
       </article>
 
       <SectionTitle>배운점</SectionTitle>
       <div className="flex flex-wrap gap-2">
-        <Paragraph>{project.whatIHaveLearned}</Paragraph>
+        <Paragraph>{getTranslated("whatIHaveLearned")}</Paragraph>
       </div>
 
       <div className="mt-20 text-center">

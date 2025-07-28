@@ -1,0 +1,71 @@
+{
+  "greeting": "Hello",
+  "description": "This is an example.",
+  "main.title1": "Creating value with",
+  "main.title2": "AI",
+  "main.title3": "Junior developer,",
+  "main.title4": "Junho Choi",
+  "main.title5": "I am.",
+  "main.subtitle": "I actively use AI in the process of turning ideas into reality. I enjoy solving complex problems, developing automated processes, and am very interested in creating new user experiences.",
+  "main.projects_button": "View Projects",
+  "ai.title": "AI Usage Experience and Interest",
+  "ai.subtitle": "I consider AI not just a tool, but a partner in creative problem-solving. I have experience pursuing efficiency and innovation by using AI in various practical areas such as coding, planning, and data analysis.",
+  "ai.card1.title": "The Potential of Solo Development and AI",
+  "ai.card1.content": "By accessing information to build my own Deep Research, I was able to analyze market research using AI, and even develop in completely unknown fields. Through this, I saw the great potential of AI to help with solo development or starting a business. I am learning the AI-based product development cycle through failure and repetition.",
+  "ai.card2.title": "Improving Development Productivity",
+  "ai.card2.content": "By using AI in various stages of development such as code generation, refactoring, and test case creation, I was able to reduce working time by more than 50% and focus on solving more important problems in the project.",
+  "ai.card3.title": "Seocho AI College",
+  "ai.card3.content": "I was accepted into the Seocho AI College training program and am receiving education on AI model development and utilization. In this course, I am building knowledge from the basics of AI models to development, and I plan to increase my understanding of AI technology through the experience of applying it to actual projects to be carried out later.",
+  "featured.title": "Featured Projects",
+  "featured.subtitle": "These are projects that contain my thoughts and problem-solving processes.",
+  "featured.all_projects_button": "View All Projects",
+  "projects": {
+    "project-1st": {
+      "title": "Coffee Bean Shopping Mall Clone Coding Project",
+      "description": "A project focused on learning backend technologies by implementing the functions of a real shopping mall through a coffee bean shopping mall clone coding project.",
+      "longDescription": "",
+      "role": "FE, BE",
+      "problem": "As a first project, I wanted to learn the backend technologies taught in class and experience the technology stack needed for actual service operation.",
+      "goal": "To learn backend technologies and experience the technology stack needed for actual service operation by clone coding the functions of a coffee bean shopping mall.",
+      "process": "1. Planning: Define core functions (order, shopping cart) → 2. Development: → 3. Deployment: Deployed using Vercel and AWS. Proceeded alone, focusing on rapid prototyping and improvement.",
+      "issuesAndSolutions": "Main issue during the project: I wrote the code based on what I initially learned, but since none of the team members could do the front-end work, I couldn't see it visually, making it difficult to identify errors with early educational knowledge. Solution: I personally proceeded with front-end clone coding to understand the overall flow and solve the problem. In addition, I shared knowledge and improved through code reviews with team members.",
+      "whatIHaveLearned": "- Learned the backend technology stack and experienced the technology stack needed for actual service operation. <br />- Understood the integration of front-end and back-end and experienced the development process in practice through clone coding. <br />- Realized the importance of collaboration and code review through GitHub."
+    },
+    "project-2nd": {
+      "title": "Order Management Integrated Solution",
+      "description": "An order management system targeting self-employed people entering the food service industry. An integrated solution that provides seasonal increase/decrease rates, loss rate comparison, and average unit price inquiry for order ingredients to achieve stable business operation by eliminating unnecessary initial expenses and minimizing food material loss.",
+      "longDescription": "",
+      "role": "FE, BE \n \n Implemented order management, one of the core functions, with one team member. Implemented the ability to create and delete order lists through POST by fetching user and product DB through GET, and implemented an order summary chart using the React library's chart.",
+      "problem": "(Second project for REST API implementation)<br /> In Korea, the food service industry accounts for 80% of self-employment, and most of them suffer losses due to poor initial response. Among them, material ordering, which greatly affects sales, depends on individual capabilities or intuition based on long-term business experience. We tried to bridge this gap through material order management.",
+      "goal": "(REST API implementation)<br /> The goal was to implement CRUD for users, administrators, products, and orders, and to complete the actual operation by implementing each API. The project's goal is to provide a solution that allows self-employed people entering the food service industry to check the seasonal increase/decrease rate and average unit price of ingredients to be ordered, compare their loss rate with that of other users, eliminate unnecessary costs in initial setup, minimize food ingredient loss, and operate a stable business.",
+      "process": "1. Planning: Requirements specification, definition of core functions (user, administrator, order, product), learning/application of Jira for schedule management →<br /> 2. Development: Selection of technology stack, design/implementation of DB and API, development of main functions for front-end and back-end, code review and testing →<br /> 3. Deployment: Tested locally.",
+      "aiFeatures": "Saved over 40% of time by writing test code using ChatGPT in the implementation process, and actively used it to solve front-end errors in unfamiliar areas.",
+      "issuesAndSolutions": "Main issue during the project: Although the CRUD for order management itself was completed, the development time was delayed because all data from members, products, etc. had to be linked. In addition, I had difficulty implementing it with the front-end.<br /><br />Solution: I created a new branch on GitHub, made test dummy data, and tested the order management function. During the implementation process, I was able to save more than 40% of my time by writing test code using ChatGPT, and I actively used it to solve front-end errors in unfamiliar areas. Later, when all the team's code was completed, I was able to complete the project by modifying only the necessary parts.",
+      "whatIHaveLearned": "- I was able to systematically manage commits using collaboration tools such as Jira, Canva, and Github. Efficient Pull Request progress was possible by setting standards when writing commits.<br />- I confirmed and experienced that real-time data can be reflected using REST API.<br />- I realized that I could quickly acquire and utilize knowledge in unfamiliar fields by actively using ChatGPT, and started using other AI chatbot services such as Rytune."
+    },
+    "project-3rd": {
+      "title": "TENPAWS - Pet Matching Service for the Elderly Living Alone",
+      "description": "We planned a pet matching service for the elderly living alone to solve the serious social problem of Korea, which has entered a super-aged society, and to save the lives of more than 100,000 abandoned animals every year.",
+      "longDescription": "",
+      "role": "PM, BE <br /> Project Manager and GitHub repository administrator, in charge of pet matching function through Chat GPT",
+      "problem": "(Bootcamp final project) <br />As of July 2024, Korea has entered a super-aged society, which has emerged as a social problem. In addition, there is a social problem of more than 100,000 abandoned animals every year. We contemplated how to solve these two social problems.",
+      "goal": "(REST API implementation)<br />To solve these two problems, we realize the value of warm connection by matching the elderly living alone with abandoned animals in shelters, becoming new families for each other. TENPAWS is not just a service, but a social companion that brings positive changes to the lives of both people and animals.",
+      "process": "1. Planning: Writing a topic plan, requirements specification, definition of core functions, learning/application of Jira for schedule management, ERD definition →<br />2. Development: Selection of technology stack, design/implementation of DB and API for collaboration, development of main functions, internal code review and integration testing →<br /> 3. Deployment: Merged front-end and back-end with Docker Compose, and deployed the service using AWS (S3, EC2, ECR, CodeDeploy)",
+      "aiFeatures": "Implemented a pet matching function using ChatGPT. Developed a feature that recommends the optimal pet from registered animal data based on user-entered preference information and adds a greeting.",
+      "issuesAndSolutions": "Main issue during the project: While trying to focus on collaboration with the FE team as a first-time PM, I became absorbed in BE work and couldn't focus on the PM's role of mediating collaboration.<br /> There was a difficulty in that I needed to know some FE technical knowledge when collaborating with the FE team.<br /> During the long-term project, I also had a hard time using libraries while implementing functions.<br />Solution: We shared our work through a short meeting before the project started every day to understand the progress.<br /> I took on non-development tasks such as GitHub management and video production to achieve the project completion.<br /> When the function integration between FE and BE did not work well, we resolved each other's difficulties through individual meetings with FE team members.<br /> Technical difficulties were resolved by keeping a record of troubleshooting with team members.",
+      "whatIHaveLearned": "- As a project manager, I realized the importance of communication and collaboration with team members. <br />- As a backend developer, I gained experience in developing RESTful APIs using Spring Boot and JPA. <br />- I experienced the potential of AI technology by implementing a pet matching function using AI.<br />- By systematically managing commits and setting conventions when using Github, I was able to reduce the time for code review and understanding.<br />- I have absorbed a considerable amount of FE technical knowledge and have become able to make modifications.<br />- I was able to complete the project within the set period by quickly catching errors using AI tools such as ChatGPT and Deepseek.<br />- I was able to develop the ability to control PM duties and collaborate."
+    },
+    "project-4th": {
+      "title": "Search Keyword Trend Explorer",
+      "description": "This is a service that allows you to check the search volume of keywords searched on Naver. <br /> You can check the search index of keywords using the Naver Search Ad API. <br /> Search and document volume are provided on a yearly basis, and you can check the search volume by month.",
+      "longDescription": "I proceeded with a personal project to quickly develop an MVP for the AI Showdown event held by Lovable, as it was available for free.",
+      "role": "Solo developer",
+      "problem": "I needed a service to understand trends and check the search volume of keywords while operating blogs, YouTube, etc. <br /> I wanted to develop a service that can check the search index of keywords using the Naver Search Ad API.",
+      "goal": "To develop a service that can check and analyze the search index of keywords using the Naver Search Ad API with vibe coding alone.",
+      "process": "1. Planning: Define core functions (keyword search index check, monthly search function) → 2. Development: Keyword search index check and monthly search function implementation task command using Naver Search Ad API → 3. Deployment: Deployed as a feature on the lovable site",
+      "aiFeatures": "Using Lovable dev, I implemented a keyword search index check and a monthly search function using the Naver Search Ad API.",
+      "issuesAndSolutions": "Main issue during the project: It was not efficient to make detailed modifications within the lovable page because the commands took time. <br />Solution: I conducted detailed development and debugging in VSCode and deployed through lovable dev. <br /> In addition, I built a database using Supabase and configured the UI using Tailwind CSS.",
+      "whatIHaveLearned": "- Using Lovable dev, I was able to quickly develop an MVP for checking the keyword search index and implementing the monthly search function using the Naver Search Ad API. <br />- I was able to learn new technologies by building a database with Supabase and configuring the UI with Tailwind CSS."
+    }
+  }
+}

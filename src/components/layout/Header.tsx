@@ -2,8 +2,15 @@ import { NavLink } from "react-router-dom";
 import { Github, BookText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "../ui/ThemeToggle";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const { i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === "ko" ? "en" : "ko");
+  };
+
   const navLinkClasses = ({ isActive }: { isActive: boolean }) =>
     `transition-colors hover:text-foreground/80 ${
       isActive ? "text-foreground" : "text-foreground/60"
@@ -29,6 +36,9 @@ const Header = () => {
         </nav>
 
         <div className="flex flex-1 items-center justify-end space-x-2">
+          <Button onClick={toggleLanguage} variant="outline" size="sm">
+            {i18n.language === "ko" ? "EN" : "KO"}
+          </Button>
           <ThemeToggle />
           <a
             href="https://github.com/wnsgho"
