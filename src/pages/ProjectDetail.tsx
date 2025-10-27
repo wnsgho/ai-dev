@@ -4,9 +4,13 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, Link as LinkIcon } from "lucide-react";
 import NotFound from "./NotFound";
+import { useI18n } from "@/contexts/LanguageContext";
 
 const ProjectDetailPage = () => {
   const { projectId } = useParams<{ projectId: string }>();
+  const { t, language } = useI18n();
+  const pick = (ko?: string, en?: string) =>
+    language === "en" && en && en.trim().length > 0 ? en : ko ?? "";
   const project = projects.find((p) => p.id === projectId);
 
   if (!project) {
@@ -30,20 +34,22 @@ const ProjectDetailPage = () => {
     <div className="container max-w-screen-md py-12 md:py-20">
       <header className="mb-12">
         <h1 className="text-4xl font-bold tracking-tight lg:text-5xl mb-2">
-          {project.title}
+          {pick(project.title, project.title_en)}
         </h1>
         <p className="text-xl text-muted-foreground">
-          {project.longDescription}
+          {pick(project.longDescription, project.longDescription_en)}
         </p>
         <div className="mt-4 space-y-1 text-sm text-slate-900 dark:text-slate-400">
           {project.period && (
             <p className="flex items-center gap-2">
-              <span className="text-base">📅</span> 작업 기간: {project.period}
+              <span className="text-base">📅</span>{" "}
+              {t("projectDetail.periodLabel")}: {project.period}
             </p>
           )}
           {project.teamComposition && (
             <p className="flex items-center gap-2">
-              <span className="text-base">👥</span> 인력 구성:{" "}
+              <span className="text-base">👥</span>{" "}
+              {t("projectDetail.teamCompositionLabel")}:{" "}
               {project.teamComposition}
             </p>
           )}
@@ -72,18 +78,24 @@ const ProjectDetailPage = () => {
       </header>
 
       <article>
-        <SectionTitle>프로젝트 개요</SectionTitle>
-        <h3 className="text-lg font-semibold mt-6 mb-2">문제 정의</h3>
-        <Paragraph>{project.problem}</Paragraph>
-        <h3 className="text-lg font-semibold mt-6 mb-2">목표</h3>
-        <Paragraph>{project.goal}</Paragraph>
-        <h3 className="text-lg font-semibold mt-6 mb-2">맡은 역할</h3>
-        <Paragraph>{project.role}</Paragraph>
+        <SectionTitle>{t("projectDetail.overview")}</SectionTitle>
+        <h3 className="text-lg font-semibold mt-6 mb-2">
+          {t("projectDetail.problem")}
+        </h3>
+        <Paragraph>{pick(project.problem, project.problem_en)}</Paragraph>
+        <h3 className="text-lg font-semibold mt-6 mb-2">
+          {t("projectDetail.goal")}
+        </h3>
+        <Paragraph>{pick(project.goal, project.goal_en)}</Paragraph>
+        <h3 className="text-lg font-semibold mt-6 mb-2">
+          {t("projectDetail.role")}
+        </h3>
+        <Paragraph>{pick(project.role, project.role_en)}</Paragraph>
 
-        <SectionTitle>설계 및 개발 과정</SectionTitle>
-        <Paragraph>{project.process}</Paragraph>
+        <SectionTitle>{t("projectDetail.process")}</SectionTitle>
+        <Paragraph>{pick(project.process, project.process_en)}</Paragraph>
 
-        <SectionTitle>사용된 기술/라이브러리</SectionTitle>
+        <SectionTitle>{t("projectDetail.tech")}</SectionTitle>
         <div className="flex flex-wrap gap-2">
           {project.techStack.map((tech) => (
             <Badge key={tech} variant="default">
@@ -92,16 +104,16 @@ const ProjectDetailPage = () => {
           ))}
         </div>
 
-        {project.aiFeatures && (
+        {(project.aiFeatures || project.aiFeatures_en) && (
           <>
-            <SectionTitle>AI 활용 사례</SectionTitle>
+            <SectionTitle>{t("projectDetail.ai")}</SectionTitle>
             <blockquote className="mt-6 border-l-2 pl-6 italic">
-              {project.aiFeatures}
+              {pick(project.aiFeatures, project.aiFeatures_en)}
             </blockquote>
           </>
         )}
 
-        <SectionTitle>결과물</SectionTitle>
+        <SectionTitle>{t("projectDetail.results")}</SectionTitle>
         <div className="grid grid-cols-1 gap-6 mt-6">
           {project.results.map((result, index) => (
             <figure key={index}>
@@ -139,24 +151,28 @@ const ProjectDetailPage = () => {
                 </a>
               ) : null}
               <figcaption className="text-center text-sm text-muted-foreground mt-2">
-                {result.caption}
+                {pick(result.caption, result.caption_en)}
               </figcaption>
             </figure>
           ))}
         </div>
 
-        <SectionTitle>주요 이슈와 해결 방안</SectionTitle>
-        <Paragraph>{project.issuesAndSolutions}</Paragraph>
+        <SectionTitle>{t("projectDetail.issues")}</SectionTitle>
+        <Paragraph>
+          {pick(project.issuesAndSolutions, project.issuesAndSolutions_en)}
+        </Paragraph>
       </article>
 
-      <SectionTitle>배운점</SectionTitle>
+      <SectionTitle>{t("projectDetail.learnings")}</SectionTitle>
       <div className="flex flex-wrap gap-2">
-        <Paragraph>{project.whatIHaveLearned}</Paragraph>
+        <Paragraph>
+          {pick(project.whatIHaveLearned, project.whatIHaveLearned_en)}
+        </Paragraph>
       </div>
 
       <div className="mt-20 text-center">
         <Link to="/projects">
-          <Button variant="outline">모든 프로젝트 보기</Button>
+          <Button variant="outline">{t("common.nav.viewAllProjects")}</Button>
         </Link>
       </div>
     </div>

@@ -9,6 +9,7 @@ import Layout from "./components/layout/Layout";
 import ProjectsPage from "./pages/Projects";
 import ProjectDetailPage from "./pages/ProjectDetail";
 import AIUsagePage from "./pages/AIUsage";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 const queryClient = new QueryClient();
 
@@ -17,20 +18,22 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/ai-dev">
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route
-              path="/projects/:projectId"
-              element={<ProjectDetailPage />}
-            />
-            <Route path="/ai-usage" element={<AIUsagePage />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
-      </BrowserRouter>
+      <LanguageProvider>
+        <BrowserRouter basename="/ai-dev">
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route
+                path="/projects/:projectId"
+                element={<ProjectDetailPage />}
+              />
+              <Route path="/ai-usage" element={<AIUsagePage />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </LanguageProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
